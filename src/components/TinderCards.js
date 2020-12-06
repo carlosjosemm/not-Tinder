@@ -1,20 +1,22 @@
 import { SwapHorizRounded } from '@material-ui/icons';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TinderCard from 'react-tinder-card';
+import axios from '../axios';
 import './TinderCards.css';
 
-export default function TinderCards() {
-    const [people, setPeople] = useState([
-        { 
-            name: 'elon musk',
-            url: "https://www.biography.com/.image/t_share/MTY2MzU3Nzk2OTM2MjMwNTkx/elon_musk_royal_society.jpg",
-        },
-        {
-            name: "brad pitt",
-            url: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg",
-        }, 
 
-    ]);
+export default function TinderCards() {
+    const [people, setPeople] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const req = await axios.get("/tinder/cards");
+
+            setPeople(req.data);
+        }
+
+        fetchData();
+    }, [])
 
     const swiped = (direction, nameToDelete) => {
         //some code...
@@ -37,7 +39,7 @@ export default function TinderCards() {
                     >
                             <div 
                                 className="card"
-                                style={{backgroundImage: `url(${person.url})`}}>
+                                style={{backgroundImage: `url(${person.imgUrl})`}}>
 
                                 <h3>{person.name}</h3>
                                 
