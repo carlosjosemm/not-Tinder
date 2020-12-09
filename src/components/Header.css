@@ -3,14 +3,29 @@
   height: 40px;
 }
 
-.top {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #f9f9f9;
   z-index: 100;
+  position: sticky;
+  top: 0;
 }
 
 .header__icon {
   padding: 20px;
+}
+
+.header a {
+  text-decoration: none;
+  color: gray;
+}
+
+.header .MuiIconButton-root {
+  background-color: white !important;
+}
+
+.header .header__iconActive {
+  color: #fe5466 !important;
 }

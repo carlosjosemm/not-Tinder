@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react'
-import Header from '../components/Header';
-import SwipeButtons from '../components/SwipeButtons';
-import TinderCards from '../components/TinderCards';
+import Header from '../components/Header'
 import { actionTypes } from '../reducer';
 import { useDataLayer } from '../StateProvider';
-import "./Main.css";
 
-export default function Main() {
+export default function Chats() {
 
     const [{path}, dispatch] = useDataLayer();
 
@@ -21,13 +18,9 @@ export default function Main() {
     console.log(`current path is ${path}`);
 
     return (
-        <div className="main">
-            <Header />
-
-            <TinderCards  />
-
-            <SwipeButtons />
-            
+        <div>
+          <Header />  
+          <h1>CHATS</h1>
         </div>
     )
 }

@@ -1,0 +1,37 @@
+.login > div > img {
+  object-fit: contain;
+  height: 300px;
+}
+
+.login {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: linear-gradient(#ff6b5b, #fd2a7b);
+}
+
+.login > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.login > button {
+  width: 300px;
+  max-width: 80vw;
+  background-color: white;
+  color: #788592;
+  font-weight: 500;
+}
+
+.googleicon {
+  padding: 3px;
+  height: 20px;
+  margin-right: 3px;
+  margin-left: -10px;
+}
+
+.login > button:hover {
+  cursor: pointer;
+  color: #434c53;
+  background-color: white !important;
+}

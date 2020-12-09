@@ -1,0 +1,11 @@
+.profile__avatar {
+  object-fit: contain;
+  width: 150px;
+  height: 150px;
+}
+
+.profile__body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
